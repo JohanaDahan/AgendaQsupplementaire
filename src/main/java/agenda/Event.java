@@ -41,7 +41,8 @@ public class Event {
      */
     public boolean isInDay(LocalDate aDay) {
         // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+           
+        return this.myStart.plus(myDuration).toLocalDate().equals(aDay)||this.myStart.toLocalDate().equals(aDay);
     }
    
     /**
@@ -66,6 +67,9 @@ public class Event {
         return myDuration;
     }
 
-   
+   @Override
+    public String toString(){
+        return this.getTitle()+" "+this.getStart()+" "+this.getDuration();
+    }
     
 }
